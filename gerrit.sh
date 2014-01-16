@@ -17,8 +17,8 @@ function commit-check {
 	while true; do
 	read -p "Have you committed your changes? [Y/N] " yn
 	case $yn in
-	[Yy]* ) echo "Good. Let's push the change."; push-verify;;
-	[Nn]* ) commit;;
+	[Yy]* ) echo "Good. Let's push the change."; push-verify; break;;
+	[Nn]* ) commit; break;;
 	    * ) echo "Please answer Yes or No.";;
 	esac
 	done
