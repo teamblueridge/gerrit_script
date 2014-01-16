@@ -27,7 +27,7 @@ function commit {
 	while true; do
 	read -p "Do you wish to commit all changes? [Y/N] " yn
 	case $yn in
-	[Yy]* ) echo "Good, let's continue"; git commit -a; break;;
+	[Yy]* ) echo "Good, let's continue"; git commit -a; push-verify; break;;
 	[Nn]* ) echo "Please commit your changes manually."; echo "Script exiting..."; exit;;
 	    * ) echo "Please answer Yes or No.";;
 	esac
