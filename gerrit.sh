@@ -1,11 +1,13 @@
 #!/bin/bash
 
-#These need to be changed to match your project & configuration
+#Start user-editable config
 name="Team BlueRidge Code Review"
 site="review.teamblueridge.org"
 url="http://${site}/"
 project="gerrit_script"
 port="29418" #Keep this the default unless you know to do otherwise
+#End user-editable config
+
 undir="$HOME/.tbr/"
 unfile="${undir}gerrit_username"
 un=`cat $unfile`
