@@ -11,7 +11,7 @@ port="29418" #Keep this the default unless you know to do otherwise
 undir="$HOME/.tbr/"
 unfile="${undir}gerrit_username"
 un=`cat $unfile`
-branch="$1" #Don't change this
+branch="$1"
 clear
 function commit-check {
 	while true; do
@@ -71,6 +71,7 @@ function username-exist {
 	echo "Welcome back to ${name}, ${un}!"
 	echo "You've already been through setup already so let's continue!"
 	echo "Your username is ${un}. To change this, execute 'rm -rf $unfile'."
+	commit-check
 }
 function username-create {
 	echo "Welcome to ${name}"
@@ -84,5 +85,6 @@ function username-create {
 	echo "BE SURE YOUR SSH KEYS ARE MATCHED WITH GERRIT IN YOUR SETTINGS"
 	echo "You can verify your SSH keys at:"
 	echo "${url}/#/settings/ssh-keys"
+	commit-check
 }
-$1
+username-check
