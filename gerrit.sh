@@ -11,7 +11,6 @@ port="29418" #Keep this the default unless you know to do otherwise (script only
 undir="$HOME/.tbr/"
 unfile="${undir}gerrit_username"
 un=`cat $unfile`
-branch="$1"
 clear
 function commit-check {
 	while true; do
@@ -87,4 +86,14 @@ function username-create {
 	echo "${url}/#/settings/ssh-keys"
 	commit-check
 }
-username-check
+function branch-check {
+	if [[ ! -z "$1" ]]; then
+		branch="$1"
+	else
+		echo "No branch provided."
+		echo -n "What branch would you like to push to? "
+		read branch
+	fi
+	username-check
+}
+branch-check
