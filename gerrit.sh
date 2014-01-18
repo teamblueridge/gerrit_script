@@ -2,13 +2,14 @@
 
 #Start user-editable config
 name="Team BlueRidge Code Review"
+abbr=".tbr" #Abbreviation for config directory
 site="review.teamblueridge.org"
 url="http://${site}/"
 project="gerrit_script"
 port="29418" #Keep this the default unless you know to do otherwise (script only supports SSH uploads)
 #End user-editable config
 
-undir="$HOME/.tbr/"
+undir="$HOME/$abbr/"
 unfile="${undir}gerrit_username"
 un=`cat $unfile`
 branch="$1"
