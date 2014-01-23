@@ -1,4 +1,4 @@
 gerrit_script
 =============
 
-Customizable script for pushing to Gerrit
+Customizable script for pushing to Gerrit.
